@@ -46,3 +46,16 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 ## Resources
 
 * cite any resources
+
+
+
+### Adding a Results Chart 
+* As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
+* We are going to use a CanvasJS chart to create this breakdown of your results for you. 
+1. The first step is to add the canvas dependency into your ```index.html```. Right above the jquery script, add in ```<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>```
+1. We need to write a few functions for this chart creation. The first is the ``` loadGraph() ``` function. ``` loadGraph() ``` holds all the logic about your chart and is very customizable. At the bottom of your ```main.js``` file, add in 
+```function loadGraph() {
+        var chart = new CanvasJS.Chart("graph", {
+
+        })
+  }```. We'll fill the rest in soon. 

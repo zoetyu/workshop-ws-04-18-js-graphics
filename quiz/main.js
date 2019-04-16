@@ -87,13 +87,11 @@ $('#submit').on('click', function (e) {
   });
 });
 
-console.log(frequencies)
 // all from https://www.w3schools.com/howto/howto_css_modals.asp
 // this makes a modal pop up after submissions
 var result = document.getElementById('myresult');
 var btn = document.getElementById('submit');
 var span = document.getElementsByClassName("close")[0];
-
 
 /** CHART STUFF HERE **/
 function getPercentage(key) {
@@ -109,6 +107,7 @@ function loadGraph() {
     theme: "light2", // "light1", "light2", "dark1", "dark2"
     exportEnabled: false,
     animationEnabled: true,
+    responsive: true,
     title: {
       text: "what % of each character are you?"
     },

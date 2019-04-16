@@ -171,6 +171,7 @@ input[type=radio]:hover + div > img {
     width: 80%; /* Could be more or less, depending on screen size */
     transform:scaleY(.01) scaleX(0);
     animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    height: auto; 
 }
 .outcome {
     display: flex; 
