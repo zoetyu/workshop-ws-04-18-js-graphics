@@ -49,9 +49,11 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 
 
 
-### Adding a Results Chart 
+## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
 * We are going to use a CanvasJS chart to create this breakdown of your results for you. 
+
+![example](img/graph.png)
 
 1. The first step is to add the canvas dependency into your ```index.html```. Right above the jquery script, add in ```<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>```
 
@@ -62,7 +64,8 @@ We're going to index into our array of frequencies for each answer in order to f
   function getPercentage(key) {
   }
 ```
-Now, we want to say that if the frequency of a certain key is > 0, return that frequency divided by the number of questions, multiplied by 100 to get a round percentage number. Otherwise, the percent is just 0. You can probs write the body of this yourself. Make sure to use ```parseInt``` on the value and ```parseInt(...).toFixed(2)``` will be helpful to achieve a nice round percent number. 
+Now, we want to say that if the frequency of a certain key is > 0, return that frequency divided by the number of questions, multiplied by 100 to get a round percentage number. Otherwise just return 0. You can probs write the body of this yourself. Make sure to use ```parseInt``` on the values in frequencies. Also ```parseInt(...).toFixed(2)``` will be helpful to achieve a nice round percent number. 
+~try it yourself~ :dizzy: :collision: :dizzy: :collision: :dizzy:
 
 This is what you should have: 
 ```javascript  
@@ -73,7 +76,7 @@ This is what you should have:
   }
 ```
 
-3. Okay, now we want to actually create a graph. We're going to put this all into a ``` loadGraph() ``` function. ``` loadGraph() ``` holds all the logic about your chart and is very customizable. Underneath your ```getPercentage``` method, add in 
+3. Okay, now we want to actually create a graph.:chart_with_upwards_trend: We're going to put this all into a ``` loadGraph() ``` function. ``` loadGraph() ``` holds all the logic about your chart and is very customizable. Underneath your ```getPercentage``` method, add in 
 ```javascript 
   function loadGraph() {
         var chart = new CanvasJS.Chart("graph", {

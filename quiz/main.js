@@ -83,7 +83,8 @@ $('#submit').on('click', function (e) {
     var buttonId = $(this).attr('id');
     $('#result-content').removeAttr('class').addClass(buttonId);
     $('body').addClass('modal-active');
-    if (!user_error) { // added user error to load graph or not 
+    // added user error to load graph or not 
+    if (!user_error) {
       loadGraph();
     }
   });
@@ -107,7 +108,7 @@ function getPercentage(key) {
 
 function loadGraph() {
   var chart = new CanvasJS.Chart("graph", {
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    theme: "light2", // theme choices: "light1", "light2", "dark1", "dark2"
     exportEnabled: false,
     animationEnabled: true,
     responsive: true,
