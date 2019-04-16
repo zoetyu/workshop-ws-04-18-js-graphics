@@ -39,6 +39,7 @@ $.getJSON("data.json", function (data) {
 
 var winner = ""; // need this to be global 
 frequencies = {};
+num_questions = 0;
 $('#submit').on('click', function (e) {
   var choices = $("input[type='radio']:checked").map(function (i, radio) {
     return $(radio).val();
@@ -65,7 +66,8 @@ $('#submit').on('click', function (e) {
 
   $.getJSON("data.json", function (data) {
     var current_outcome;
-    var user_error = false; // added this variable 
+    var user_error = false; // added this variable
+    num_questions = parseInt(data.number_of_questions);
     if (choices.length < data.number_of_questions) {
       current_outcome = $(`<p id="error">${data.error}</p>`);
       user_error = true;
@@ -87,6 +89,7 @@ $('#submit').on('click', function (e) {
   });
 });
 
+
 // all from https://www.w3schools.com/howto/howto_css_modals.asp
 // this makes a modal pop up after submissions
 var result = document.getElementById('myresult');
@@ -96,7 +99,7 @@ var span = document.getElementsByClassName("close")[0];
 /** CHART STUFF HERE **/
 function getPercentage(key) {
   if (parseInt(frequencies[key]) > 0) {
-    return parseInt((frequencies[key]) / 7 * 100).toFixed(2)
+    return parseInt((frequencies[key]) / num_questions * 100).toFixed(2)
   } else {
     return 0
   }
@@ -114,11 +117,10 @@ function loadGraph() {
     data: [{
       type: "pie",
       startAngle: 25,
-      toolTipContent: "<b>{label}</b>: {y}%",
       showInLegend: "true",
       legendText: "{label}",
       indexLabelFontSize: 16,
-      indexLabel: "{label} - {y}%",
+      indexLabel: "{label}: {y}%",
       dataPoints: [
         { y: getPercentage("alexis"), label: "Alexis" },
         { y: getPercentage("david"), label: "David" },
