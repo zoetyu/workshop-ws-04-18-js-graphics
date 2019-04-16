@@ -1,6 +1,6 @@
 # CS52 Workshops:  Introduction to JS Graphics
 
-![](http://i.giphy.com/eUh8NINbZf9Ys.gif)
+![](https://media.giphy.com/media/sAFvfQ96HvXbO/giphy.gif)
 
 Javascript graphical libraries are a powerful and fun way to add elaborate animations to your apps and websites! Today we're going to try some out for ourselves and see how these tools can be used to enhance our own projects.
 
