@@ -216,9 +216,15 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 * [ ] 2 reflection questions
 
 
-## Resources
+## Sources
 
-* cite any resources
+* Swirly click effect
+https://codepen.io/sdras/pen/kkqNYK?editors=1111
+
+* Canvas.js chart
+https://canvasjs.com/javascript-charts/animated-chart/
+
+
 
 
 
