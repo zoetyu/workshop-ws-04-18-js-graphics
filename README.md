@@ -10,13 +10,21 @@ Today we're going to build on an existing Buzzfeed quiz with some animations! By
 
 ## Setup
 
+We're going to be building off and enhancing an existing Buzzfeed quiz! To begin, clone down this repo. The directory called "quiz" contains the quiz we will be working with. Right now it doesn't have any elaborate animations, so let's add some!
+
+As you are working, you can always view your quiz by running:
+
+```python -m SimpleHTTPServer 9000```
+
+## Part 1: Add a "Burst" Click Effect
+
+### Load in Mo.js
+
 First we need to load in the mo.js library! In you index.html file, add the following to the *body* section.
 
 ```html
 <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
 ```
-
-## Part 1: Add a "Burst" Click Effect
 
 ### Burst shape
 The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. Here is the code we want to use for our burst:
