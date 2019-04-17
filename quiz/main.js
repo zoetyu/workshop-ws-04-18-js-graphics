@@ -1,4 +1,4 @@
-$.getJSON("data.json", function (data) {
+$.getJSON("data_dartmouth.json", function (data) {
   var typed = new Typed('#quiz-title', {
     strings: ["Welcome to our workshop", data.quiz_title],
     typeSpeed: 30,
@@ -169,10 +169,10 @@ function loadGraph() {
       indexLabelFontSize: 16,
       indexLabel: "{label}: {y}%",
       dataPoints: [
-        { y: getPercentage("alexis"), label: "Alexis" },
-        { y: getPercentage("david"), label: "David" },
-        { y: getPercentage("moira"), label: "Moira" },
-        { y: getPercentage("johnny"), label: "Johnny" },
+        { y: getPercentage("Dartmouth Hall"), label: "Dartmouth Hall" },
+        { y: getPercentage("Baker"), label: "Baker" },
+        { y: getPercentage("Collis"), label: "Collis" },
+        { y: getPercentage("Foco"), label: "Foco" },
       ]
     }]
   });
