@@ -129,7 +129,12 @@ Play around with these to see how the different parts of the animation fit toget
 
 Let's add some new simple animations to the main part of our quiz with velocity!
 
-First thing's first, let's load in velocity by placing this at the bottom of our HTML body
+First thing's first, let's npm install and load in velocity by placing this at the bottom of our HTML body
+
+```
+npm install velocity -g
+```
+
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
