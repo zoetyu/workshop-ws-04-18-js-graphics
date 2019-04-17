@@ -256,34 +256,16 @@ This is the end of our chart variable. Then call ```chart.render();``` and close
 
 That's it!! Hope you enjoy finding out your results in chart form :) 
 
-* Explanations of the what **and** the why behind each step. Try to include:
-  * higher level concepts
-  * best practices
-
-Remember to explain any notation you are using.
-
-```javascript
-/* and use code blocks for any code! */
-```
-
-![screen shots are helpful](img/screenshot.png)
-
-:sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
-
-Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
-
-
 ## Summary / What you Learned
 
-* [ ] can be checkboxes
+* [ ] The benefits of Javascript Graphics libraries and all the cool stuff you can do with them
+* [ ] How to use shapes, bursts, easing/path easing, and timelines in mo.js to create a small animation
+* [ ] How to use canvas.js to create a pie chart based on data inputted by the user
 
 ## Reflection
 
-*2 questions for the workshop participants to answer (very short answer) when they submit the workshop. These should try to get at something core to the workshop, the what and the why.*
-
-* [ ] 2 reflection questions
-* [ ] 2 reflection questions
-
+* What is the value of using javascript graphics libraries? Can you think of some applications for which you would be most interested in using graphics libraries?
+* Explain how javascript libraries offer an additional level of abstraction from the code running the graphics.
 
 ## Sources
 
@@ -292,9 +274,12 @@ https://codepen.io/sdras/pen/kkqNYK?editors=1111
 
 * Canvas.js chart
 https://canvasjs.com/javascript-charts/animated-chart/
+<<<<<<< HEAD
 
 * Bouncy Button
 https://codepen.io/bennettfeely/pen/DAbuf
 
 
 
+=======
+>>>>>>> 6887eacdb9366468d008dd0f12fba48ba42ae8bf

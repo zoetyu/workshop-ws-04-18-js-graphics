@@ -1,14 +1,27 @@
 {
+    "welcome_string": "Welcome to our workshop!",
     "quiz_title": "Which member of the Rose family are you?",
     "submit_button": "WHO AM I?",
     "number_of_questions": 7,
     "congrats": "congrats, you're...",
     "error": "please go back and answer all questions",
     "outcomes": {
-            "moira": {"img": "img/m.jpg", "text": "you have a tendency to over-exaggerate and self-indulge, but your charisma and talent make up for it"},
-            "alexis": {"img": "img/a.jpg", "text": "you're a social butterfly, loove your green smoothies, and are always up for gossiping"},
-            "johnny": {"img": "img/j.jpg", "text": "you're a hardworker, super loyal, and just want some nice family time "},
-            "david": {"img": "img/d.jpg", "text": "you're not afraid to tell it like it is and you love a designer sweater in the summer. and you can't ride a bike."}
+        "moira": {
+            "img": "img/m.jpg",
+            "text": "you have a tendency to over-exaggerate and self-indulge, but your charisma and talent make up for it"
+        },
+        "alexis": {
+            "img": "img/a.jpg",
+            "text": "you're a social butterfly, loove your green smoothies, and are always up for gossiping"
+        },
+        "johnny": {
+            "img": "img/j.jpg",
+            "text": "you're a hardworker, super loyal, and just want some nice family time "
+        },
+        "david": {
+            "img": "img/d.jpg",
+            "text": "you're not afraid to tell it like it is and you love a designer sweater in the summer. and you can't ride a bike."
+        }
     },
     "questions": [
         {
@@ -63,7 +76,6 @@
                     "img": "img/waffle.jpg",
                     "value": "johnny"
                 }
-
             ]
         },
         {
@@ -163,7 +175,6 @@
                     "caption": "&#34Oh i'd kill for a good coma right now&#34",
                     "value": "moira"
                 }
-
             ]
         },
         {
