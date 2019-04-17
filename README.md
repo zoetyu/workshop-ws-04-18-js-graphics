@@ -129,6 +129,12 @@ Play around with these to see how the different parts of the animation fit toget
 
 Let's add some new simple animations to the main part of our quiz with velocity!
 
+First thing's first, let's load in velocity by placing this at the bottom of our HTML body
+
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+```
+
 ### Selected Answer Effects
 
 Here we increase the size of our selected answer and decrease the size of the options we didn't select. We can use  ```scale``` to do this very easily. See how simple and intuitive the syntax is?
@@ -184,6 +190,23 @@ $(this).velocity({
   rotateZ: "0"
 }, 600, "easeOutBounce");
 ```
+
+We also want to add in a fancy typing effect to the title words -- you can also attempt to add this to any text you want! You probably have seen this on a number of websites, and its all from a simple js library called typedJS. So first you want to install typed.js. So go to the command line and do ```npm install typed.js```. Then in your html file, add ```<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>``` at the end of your body (make sure its above ```main.js```). Now for the fun stuff!
+
+Go into your ```main.js``` file. The way these typed words are created is just a simple object that holds some properties about how you want to display the typed out words. We're going to keep it simple, but feel free to google more properties and try to add them in. So we want to create a typed object for our ```quiz-title``` div, and this should be the first thing we do in the first ```getJSON```. We instantiate the typed object like a normal ```var```, and it takes a class or id as the first parameter, and a list of properties as the second parameter. This is the set up: 
+```javascript 
+var typed = new Typed('#quiz-title', {})
+```
+The properties we used are just ```strings``` (which are all the shown by the typed object one after another) and ```typeSpeed```, which we set to 30. 
+Here is the final product: 
+```javascript
+var typed = new Typed('#quiz-title', {
+    strings: ["Welcome to our workshop", data.quiz_title],
+    typeSpeed: 30
+  });
+```
+Put this in your code and refresh the page! very funky. 
+
 
 ## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
