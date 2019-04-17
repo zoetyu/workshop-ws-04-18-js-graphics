@@ -169,7 +169,9 @@ $("#quiz-title").velocity({
 }, 500);
 ```
 
-Now let's add a bounce animation to our results button, and this time throw in some easing. This just changes the way that the animation is carried out, like in the case of ```easeOutBounce``` this means that the button will bounce once it reaches the end point of the animation.
+Now let's add a bounce animation to our submit button, and this time throw in some easing. This just changes the way that the animation is carried out, like in the case of ```easeOutBounce``` this means that the button will bounce once it reaches the end point of the animation.
+
+Add this block of code inside of the click handler for our submit button.
 
 ```javascript
 $(this).velocity({
@@ -261,6 +263,7 @@ That's it!! Hope you enjoy finding out your results in chart form :)
 * [ ] The benefits of Javascript Graphics libraries and all the cool stuff you can do with them
 * [ ] How to use shapes, bursts, easing/path easing, and timelines in mo.js to create a small animation
 * [ ] How to use canvas.js to create a pie chart based on data inputted by the user
+* [ ] How to use velocity.js to create simple animations more easily than in CSS and more efficiently than with JQuery.
 
 ## Reflection
 
@@ -274,12 +277,9 @@ https://codepen.io/sdras/pen/kkqNYK?editors=1111
 
 * Canvas.js chart
 https://canvasjs.com/javascript-charts/animated-chart/
-<<<<<<< HEAD
 
 * Bouncy Button
 https://codepen.io/bennettfeely/pen/DAbuf
 
 
 
-=======
->>>>>>> 6887eacdb9366468d008dd0f12fba48ba42ae8bf
