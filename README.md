@@ -129,6 +129,12 @@ Play around with these to see how the different parts of the animation fit toget
 
 Let's add some new simple animations to the main part of our quiz with velocity!
 
+First thing's first, let's load in velocity by placing this at the bottom of our HTML body
+
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+```
+
 ### Selected Answer Effects
 
 Here we increase the size of our selected answer and decrease the size of the options we didn't select. We can use  ```scale``` to do this very easily. See how simple and intuitive the syntax is?
