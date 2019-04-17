@@ -53,6 +53,18 @@ $.getJSON("data_dartmouth.json", function (data) {
     $(this).velocity({ rotateZ: "-=120" }, { duration: 100 });
     $(this).velocity({ rotateZ: "+=60" }, { duration: 100 });
   });
+
+  //for scroll reveal
+  let labelReveal = {
+    delay: 100,
+    interval: 100,
+    origin: 'right',
+    distance: '60px'
+  };
+
+  ScrollReveal().reveal('.question', {delay: 100, reset: true});
+  ScrollReveal().reveal('label', labelReveal);
+  ScrollReveal().reveal('#submit-container', {delay:300});
 });
 
 var winner = "";

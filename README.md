@@ -196,6 +196,16 @@ $(this).velocity({
 }, 600, "easeOutBounce");
 ```
 
+## Part 3: Add Effects using ScrollReveal.js
+
+In vanilla CSS and HTML, it is impossible to add effects that trigger as the user scrolls down the page, as you can't track the current position of the page. This fixes that!
+
+First, add the ScrollReveal.js plugin to your page by including `<script src="https://unpkg.com/scrollreveal"></script>` in the head of index.html.
+
+Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in main.js. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
+
+First...
+=======
 We also want to add in a fancy typing effect to the title words -- you can also attempt to add this to any text you want! You probably have seen this on a number of websites, and its all from a simple js library called typedJS. So first you want to install typed.js. So go to the command line and do ```npm install typed.js```. Then in your html file, add ```<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>``` at the end of your body (make sure its above ```main.js```). Now for the fun stuff!
 
 Go into your ```main.js``` file. The way these typed words are created is just a simple object that holds some properties about how you want to display the typed out words. We're going to keep it simple, but feel free to google more properties and try to add them in. So we want to create a typed object for our ```quiz-title``` div, and this should be the first thing we do in the first ```getJSON```. We instantiate the typed object like a normal ```var```, and it takes a class or id as the first parameter, and a list of properties as the second parameter. This is the set up: 
@@ -211,7 +221,6 @@ var typed = new Typed('#quiz-title', {
   });
 ```
 Put this in your code and refresh the page! very funky. 
-
 
 ## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
