@@ -167,7 +167,7 @@ function loadGraph() {
       indexLabelFontSize: 16,
       indexLabel: "{label}: {y}%",
       dataPoints: [
-        { y: getPercentage("Dartmouth Hall"), label: "Dartmouth Hall" },
+        { y: getPercentage("DartHall"), label: "Dartmouth Hall" },
         { y: getPercentage("Baker"), label: "Baker" },
         { y: getPercentage("Collis"), label: "Collis" },
         { y: getPercentage("Foco"), label: "Foco" },
