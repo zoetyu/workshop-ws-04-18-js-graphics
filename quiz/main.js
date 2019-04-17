@@ -142,7 +142,7 @@ var result = document.getElementById('myresult');
 /** CHART STUFF HERE **/
 function getPercentage(key) {
   if (parseInt(frequencies[key]) > 0) {
-    return parseInt((frequencies[key]) / num_questions * 100).toFixed(2)
+    return parseInt((frequencies[key]) / num_questions * 100) // .toFixed(2)
   } else {
     return 0
   }

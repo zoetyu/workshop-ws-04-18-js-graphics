@@ -6,7 +6,7 @@ Javascript graphical libraries are a powerful and fun way to add elaborate anima
 
 ## Overview
 
-Today we're going to build on an existing Buzzfeed quiz with some animations! By the end of the workshop, you will have a quiz with fancy animations throughout, created using mo.js, and a graphical representation of results each time the quiz is taken.
+Today we're going to build on an existing Buzzfeed quiz with some animations! By the end of the workshop, you will have a quiz with fancy animations throughout, created using multiple js graphical libraries, and a graphical representation of results each time the quiz is taken.
 
 ## Setup
 
@@ -212,7 +212,7 @@ Put this in your code and refresh the page! very funky.
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
 * We are going to use a CanvasJS chart to create this breakdown of your results for you. 
 
-![example](img/graph.png)
+![example](quiz/img/graph.png)
 
 1. The first step is to add the canvas dependency into your ```index.html```. Right above the jquery script, add in ```<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>```
 
@@ -285,7 +285,7 @@ That's it!! Hope you enjoy finding out your results in chart form :)
 
 * [ ] The benefits of Javascript Graphics libraries and all the cool stuff you can do with them
 * [ ] How to use shapes, bursts, easing/path easing, and timelines in mo.js to create a small animation
-* [ ] How to use canvas.js to create a pie chart based on data inputted by the user
+* [ ] How to use the canvas.js chart module to create a pie chart based on data inputted by the user
 * [ ] How to use velocity.js to create simple animations more easily than in CSS and more efficiently than with JQuery.
 
 ## Reflection
@@ -304,5 +304,11 @@ https://canvasjs.com/javascript-charts/animated-chart/
 * Bouncy Button
 https://codepen.io/bennettfeely/pen/DAbuf
 
+## Research for presentation
 
+* https://greensock.com/gsap
+* https://css-tricks.com/introduction-mo-js/
+* https://css-tricks.com/myth-busting-css-animations-vs-javascript/
+* https://www.chartjs.org/docs/latest/
+* https://www.w3schools.com/html/html5_canvas.asp
 
