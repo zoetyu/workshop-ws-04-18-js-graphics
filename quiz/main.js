@@ -1,4 +1,5 @@
 $.getJSON("data_dartmouth.json", function (data) {
+  /** Typed.js stuff **/
   var typed = new Typed('#quiz-title', {
     strings: ["Welcome to our workshop", data.quiz_title],
     typeSpeed: 30
@@ -20,7 +21,7 @@ $.getJSON("data_dartmouth.json", function (data) {
       }
       if (choice.caption) {
         curr_choice.append(`<p class="caption">${choice.caption}</p>`);
-      } else { // don't want the caption bar, so choice div is just full img -- styled differently 
+      } else {
         curr_choice.addClass('no-caption');
       }
       current_label.append(curr_choice);
@@ -37,7 +38,8 @@ $.getJSON("data_dartmouth.json", function (data) {
     $(this).siblings().addClass('unselected');
     $(this).siblings().removeClass('selected');
     $(this).removeClass('unselected');
-    //tutorial
+
+    // velocity stuff part 1 (scaling)
     $(this).velocity({
       scale: 1.2
     }, 200);
@@ -45,19 +47,31 @@ $.getJSON("data_dartmouth.json", function (data) {
       scale: 0.8
     }, 200);
   });
-  //tutorial
+  // velocity stuff part 2 (rotating on selection)
   $('.choice').click(function () {
     $(this).velocity({ rotateZ: "+=60" }, { duration: 100 });
     $(this).velocity({ rotateZ: "-=120" }, { duration: 100 });
     $(this).velocity({ rotateZ: "+=60" }, { duration: 100 });
   });
+
+  //for scroll reveal
+  let labelReveal = {
+    delay: 100,
+    interval: 100,
+    origin: 'right',
+    distance: '60px'
+  };
+
+  ScrollReveal().reveal('.question', {delay: 100, reset: true});
+  ScrollReveal().reveal('label', labelReveal);
+  ScrollReveal().reveal('#submit-container', {delay:300});
 });
 
-var winner = ""; // need this to be global 
+var winner = "";
 frequencies = {};
 num_questions = 0;
 
-//tutorial
+// velocity part 3 -- title banner
 $("#quiz-title").velocity({
   scale: 1.5
 }, 500);
@@ -70,7 +84,7 @@ $('#submit').on('click', function (e) {
     return $(radio).val();
   }).toArray();
 
-  //tutorial
+  // velocity -- bouncy submit button 
   $(this).velocity({
     translateY: "-1.5rem",
     rotateZ: "-10deg"
@@ -108,24 +122,20 @@ $('#submit').on('click', function (e) {
 
   $.getJSON("data.json", function (data) {
     var current_outcome;
-    var user_error = false; // added this variable
+    var user_error = false; // added this variable in 
     num_questions = parseInt(data.number_of_questions);
     if (choices.length < data.number_of_questions) {
       current_outcome = $(`<p id="error">${data.error}</p>`);
       user_error = true;
     } else {
       current_outcome = null;
-      /*current_outcome = $(`<div class="outcome"><div class="outcome-text"><p id="congrats">${data.congrats}</p>
-                              <p id="whoami">${winner}</p>
-                              <p id="whoami-description">${data.outcomes[winner].text}</p></div>
-                              <img class="outcome-img"src=${data.outcomes[winner].img}></div>`);*/
     }
     $('.current-outcome').html(current_outcome);
-    // moved button stuff from two places to one!
     result.style.display = "block";
     var buttonId = $(this).attr('id');
     $('#result-content').removeAttr('class').addClass(buttonId);
     $('body').addClass('modal-active');
+
     // added user error to load graph or not 
     if (!user_error) {
       loadGraph();
@@ -135,14 +145,12 @@ $('#submit').on('click', function (e) {
 
 
 // all from https://www.w3schools.com/howto/howto_css_modals.asp
-// this makes a modal pop up after submissions
 var result = document.getElementById('myresult');
-//var span = document.getElementsByClassName("close")[0];
 
 /** CHART STUFF HERE **/
 function getPercentage(key) {
   if (parseInt(frequencies[key]) > 0) {
-    return parseInt((frequencies[key]) / num_questions * 100).toFixed(2)
+    return parseInt((frequencies[key]) / num_questions * 100) // .toFixed(2)
   } else {
     return 0
   }
@@ -183,12 +191,6 @@ function resetFreqs() {
   })
 }
 
-/*span.onclick = function () {
-  $(this).addClass('out');
-  $('body').removeClass('modal-active');
-  result.style.display = "none";
-  resetFreqs();
-}*/
 window.onclick = function (event) {
   $(this).addClass('out');
   $('body').removeClass('modal-active');
@@ -198,7 +200,7 @@ window.onclick = function (event) {
   }
 }
 
-// Add click effect here
+/**  Add click effect here **/
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius: { 0: 100 },
