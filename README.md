@@ -152,8 +152,10 @@ This is what you should have:
         })
   }
 ```
-The canvas chart module is pretty well-defined, so we're just going to use some of their presets to create our graph. They have properties like ```theme```, ```exportEnabled```(which just adds an option to print or share your graph), ```responsive```, and ```animationEnabled```. These are the settings we chose, but feel free to change them. 
+The canvas chart module is pretty well-defined, so we're just going to use some of their presets to create our graph. They have properties like ```width```, ```height```, ```theme```, ```exportEnabled```(which just adds an option to print or share your graph), ```responsive```, and ```animationEnabled```. These are the settings we chose, but feel free to change them. 
 ```javascript 
+  width: 600,
+  height: 400,
   theme: "light2", // "light1", "light2", "dark1", "dark2"
   exportEnabled: false,
   animationEnabled: true,

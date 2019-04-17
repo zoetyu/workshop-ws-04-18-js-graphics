@@ -215,3 +215,11 @@ button:focus {
     outline:0;
 }
 
+div.canvasjs-chart-container {
+    text-align: center !important;
+    position: relative !important;
+    height: 400px !important;
+}
+canvas.canvasjs-chart-canvas {
+    position: relative !important; 
+}
