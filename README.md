@@ -18,6 +18,7 @@ First we need to load in the mo.js library! In you index.html file, add the foll
 
 ## Part 1: Add a "Burst" Click Effect
 
+### Burst shape
 The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. Here is the code we want to use for our burst:
 
 ```javascript
@@ -55,7 +56,7 @@ const circle = new mojs.Shape({
 ```
 We use the simple shape tools available through mojs to create a circle. Calling ```new.mojs.Shape()``` creates a circle by default. We then define the basic properties of ```stroke```, ```strokeWidth```, ```fill```, ```radius```, ```opacity```, etc.  We also define a few parameters that animate our circle, such as ```duration``` and ```easing```, which we define as "elastic.out," which makes our circle expand out in a similar way to our burst.
 
-The final component of our click effect that we need to add is the whirling effect that makes it spin in and out. Our first step is to use the mojs ```CustomShape``` functionality to create a custom shape called 'whirl'. 
+The final component of our click effect that we need to add is the whirling effect that makes it spin in and out. Our first step is to use the mojs ```CustomShape``` functionality to create a custom shape called 'whirl'. We are going to be using an SVG path to define the shape that we want. An SVG (Scalable Vector Graphics) path is an element that can be used to create lines, curves, arcs and more. There are lots of online resources for generating the path you want, so don't worry about all the complicated numbers--just know it defines the shape we are creating!
 
 ```javascript
 class Whirl extends mojs.CustomShape {
@@ -66,7 +67,7 @@ class Whirl extends mojs.CustomShape {
 mojs.addShape( 'whirl', Whirl );
 ```
 
-Now, we are going to use something special in mojs called path easing. This allows us to pass in an SVG path as an easing value to define the path of the animation. 
+Now, we are going to use something special in mojs called path easing. This allows us to pass in an SVG path as an easing value to define the path of the animation. Again, SVG paths look confusing, but they can be generated with the help of online resources. Later in the tutorial you will be given a chance to isolate different parts of the animation and see what each looks like individually. Be sure to isolate the whirl to see how the SVG path below that defines the animation easing path, as well as the one above that defines the shape, look on their own. For now, just know the below snippet defines the path in which the whirl animation will move.
 
 ```javascript
 const whirlE = mojs.easing.path('M0,3.3S104.4,146.8,104.4,366.8c0,0,10.6-586.5,68.8-76.5,0,0,40.6-359.4,88.8-50,0,0,35.3-194.7,74.7-15.9,0,0,35.9-81.8,63.2,2.4');
@@ -218,9 +219,15 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 * [ ] 2 reflection questions
 
 
-## Resources
+## Sources
 
-* cite any resources
+* Swirly click effect
+https://codepen.io/sdras/pen/kkqNYK?editors=1111
+
+* Canvas.js chart
+https://canvasjs.com/javascript-charts/animated-chart/
+
+
 
 
 
