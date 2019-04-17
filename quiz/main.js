@@ -48,10 +48,10 @@ $.getJSON("data.json", function (data) {
     }, 200);
   });
   //tutorial
-  $('.choice').click(function() {
-    $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
-    $(this).velocity({  rotateZ: "-=120" }, { duration: 100});
-    $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
+  $('.choice').click(function () {
+    $(this).velocity({ rotateZ: "+=60" }, { duration: 100 });
+    $(this).velocity({ rotateZ: "-=120" }, { duration: 100 });
+    $(this).velocity({ rotateZ: "+=60" }, { duration: 100 });
   });
 });
 
@@ -60,53 +60,53 @@ frequencies = {};
 num_questions = 0;
 
 //tutorial
-$("#quiz-title").velocity({ 
+$("#quiz-title").velocity({
   scale: 1.5
 }, 500);
-$("#quiz-title").velocity({ 
+$("#quiz-title").velocity({
   scale: 1.0
 }, 500);
 
-$('#submit').on('click', function(e) {
-    var choices = $("input[type='radio']:checked").map(function(i, radio) {
-      return $(radio).val();
-    }).toArray();
+$('#submit').on('click', function (e) {
+  var choices = $("input[type='radio']:checked").map(function (i, radio) {
+    return $(radio).val();
+  }).toArray();
 
-    //tutorial
-    $(this).velocity({
-      translateY: "-1.5rem",
-      rotateZ: "-10deg"
-    }, 100, "easeOut").velocity({
-      rotateZ: "8deg",
-    }, 150).velocity({
-      translateY: "0",
-      rotateZ: "0"
-    }, 600, "easeOutBounce");
-    
-    $("+ .shadow", this).velocity({
-      scale: "1.3",
-      opacity: "1"
-    }, 150).velocity("reverse", 600, "easeOutBounce");
-    
-    // used this for help on writing the function below to find the most freq. word 
-    //appendto.com/2016/10/finding-the-most-frequent-string-in-a-javascript-array/
-    
-    for (i = 0; i < choices.length; i++) {
-        el = choices[i];
-        if (!frequencies[el]) {
-            frequencies[el] = 1; 
-        } else {
-            frequencies[el]++;
-        }
-    };
+  //tutorial
+  $(this).velocity({
+    translateY: "-1.5rem",
+    rotateZ: "-10deg"
+  }, 100, "easeOut").velocity({
+    rotateZ: "8deg",
+  }, 150).velocity({
+    translateY: "0",
+    rotateZ: "0"
+  }, 600, "easeOutBounce");
 
-    max = 0;
-    Object.keys(frequencies).forEach(function(key)  {
-        if (frequencies[key] > max) {
-            max = frequencies[key];
-            winner = key; 
-        }
-    })
+  $("+ .shadow", this).velocity({
+    scale: "1.3",
+    opacity: "1"
+  }, 150).velocity("reverse", 600, "easeOutBounce");
+
+  // used this for help on writing the function below to find the most freq. word 
+  //appendto.com/2016/10/finding-the-most-frequent-string-in-a-javascript-array/
+
+  for (i = 0; i < choices.length; i++) {
+    el = choices[i];
+    if (!frequencies[el]) {
+      frequencies[el] = 1;
+    } else {
+      frequencies[el]++;
+    }
+  };
+
+  max = 0;
+  Object.keys(frequencies).forEach(function (key) {
+    if (frequencies[key] > max) {
+      max = frequencies[key];
+      winner = key;
+    }
+  })
 
   $.getJSON("data.json", function (data) {
     var current_outcome;
@@ -116,10 +116,11 @@ $('#submit').on('click', function(e) {
       current_outcome = $(`<p id="error">${data.error}</p>`);
       user_error = true;
     } else {
-      current_outcome = $(`<div class="outcome"><div class="outcome-text"><p id="congrats">${data.congrats}</p>
+      current_outcome = null;
+      /*current_outcome = $(`<div class="outcome"><div class="outcome-text"><p id="congrats">${data.congrats}</p>
                               <p id="whoami">${winner}</p>
                               <p id="whoami-description">${data.outcomes[winner].text}</p></div>
-                              <img class="outcome-img"src=${data.outcomes[winner].img}></div>`);
+                              <img class="outcome-img"src=${data.outcomes[winner].img}></div>`);*/
     }
     $('.current-outcome').html(current_outcome);
     // moved button stuff from two places to one!
@@ -138,8 +139,7 @@ $('#submit').on('click', function(e) {
 // all from https://www.w3schools.com/howto/howto_css_modals.asp
 // this makes a modal pop up after submissions
 var result = document.getElementById('myresult');
-var btn = document.getElementById('submit');
-var span = document.getElementsByClassName("close")[0];
+//var span = document.getElementsByClassName("close")[0];
 
 /** CHART STUFF HERE **/
 function getPercentage(key) {
@@ -185,12 +185,12 @@ function resetFreqs() {
   })
 }
 
-span.onclick = function () {
+/*span.onclick = function () {
   $(this).addClass('out');
   $('body').removeClass('modal-active');
   result.style.display = "none";
   resetFreqs();
-}
+}*/
 window.onclick = function (event) {
   $(this).addClass('out');
   $('body').removeClass('modal-active');
