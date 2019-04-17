@@ -1,9 +1,7 @@
 $.getJSON("data.json", function (data) {
   var typed = new Typed('#quiz-title', {
     strings: ["Welcome to our workshop", data.quiz_title],
-    typeSpeed: 30,
-    showCursor: true,
-    cursorChar: "|"
+    typeSpeed: 30
   });
 
   data.questions.forEach(question => {
