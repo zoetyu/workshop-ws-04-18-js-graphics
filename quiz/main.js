@@ -1,4 +1,4 @@
-$.getJSON("data.json", function (data) {
+$.getJSON("data_dartmouth.json", function (data) {
   var typed = new Typed('#quiz-title', {
     strings: ["Welcome to our workshop", data.quiz_title],
     typeSpeed: 30
@@ -142,7 +142,7 @@ var result = document.getElementById('myresult');
 /** CHART STUFF HERE **/
 function getPercentage(key) {
   if (parseInt(frequencies[key]) > 0) {
-    return parseInt((frequencies[key]) / num_questions * 100).toFixed(2)
+    return parseInt((frequencies[key]) / num_questions * 100) // .toFixed(2)
   } else {
     return 0
   }
@@ -157,7 +157,7 @@ function loadGraph() {
     animationEnabled: true,
     responsive: true,
     title: {
-      text: "what % of each character are you?"
+      text: "what % of each building are you?"
     },
     data: [{
       type: "pie",
@@ -167,10 +167,10 @@ function loadGraph() {
       indexLabelFontSize: 16,
       indexLabel: "{label}: {y}%",
       dataPoints: [
-        { y: getPercentage("alexis"), label: "Alexis" },
-        { y: getPercentage("david"), label: "David" },
-        { y: getPercentage("moira"), label: "Moira" },
-        { y: getPercentage("johnny"), label: "Johnny" },
+        { y: getPercentage("DartHall"), label: "Dartmouth Hall" },
+        { y: getPercentage("Baker"), label: "Baker" },
+        { y: getPercentage("Collis"), label: "Collis" },
+        { y: getPercentage("Foco"), label: "Foco" },
       ]
     }]
   });
