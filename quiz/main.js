@@ -157,7 +157,7 @@ function loadGraph() {
     animationEnabled: true,
     responsive: true,
     title: {
-      text: "what % of each character are you?"
+      text: "what % of each building are you?"
     },
     data: [{
       type: "pie",
