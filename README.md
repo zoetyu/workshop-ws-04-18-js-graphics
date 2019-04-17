@@ -17,10 +17,15 @@ As you are working, you can always view your quiz by running:
 ```python -m SimpleHTTPServer 9000```
 
 ## Part 1: Add a "Burst" Click Effect
+The first thing we're going to learn to do is establish a fun fireworks-like click effect for every time the user clicks on the screen.
 
 ### Load in Mo.js
 
-First we need to load in the mo.js library! In you index.html file, add the following to the *body* section.
+First we need to load in the mo.js library! Start by calling the following from Terminal:
+
+```npm install mo-js```
+
+Then cd into the quiz direcory, and in the index.html file, add the following to the *body* section.
 
 ```html
 <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
