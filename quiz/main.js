@@ -1,5 +1,10 @@
 $.getJSON("data.json", function (data) {
-  $('#quiz-title').append(`<h1>${data.quiz_title}</h1>`);
+  var typed = new Typed('#quiz-title', {
+    strings: ["Welcome to our workshop", data.quiz_title],
+    typeSpeed: 30,
+    showCursor: true,
+    cursorChar: "|"
+  });
 
   data.questions.forEach(question => {
     var current_question = $(`<div class="question"></div>`);

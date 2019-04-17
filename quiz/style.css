@@ -18,6 +18,15 @@ body {
     justify-content: flex-end;
     text-align: right; 
     padding-right: 30px; 
+    color: #F9C507;
+    font-size: 3rem; 
+    /* https://css-tricks.com/adding-stroke-to-web-text/ */
+    text-shadow: 
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
 }
 .question {
     margin-left: 5vw;
