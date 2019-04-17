@@ -17,15 +17,10 @@ As you are working, you can always view your quiz by running:
 ```python -m SimpleHTTPServer 9000```
 
 ## Part 1: Add a "Burst" Click Effect
-The first thing we're going to learn to do is establish a fun fireworks-like click effect for every time the user clicks on the screen.
 
 ### Load in Mo.js
 
-First we need to load in the mo.js library! Start by calling the following from Terminal:
-
-```npm install mo-js```
-
-Then cd into the quiz direcory, and in the index.html file, add the following to the *body* section.
+First we need to load in the mo.js library! In you index.html file, add the following to the *body* section.
 
 ```html
 <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
@@ -201,16 +196,6 @@ $(this).velocity({
 }, 600, "easeOutBounce");
 ```
 
-## Part 3: Add Effects using ScrollReveal.js
-
-In vanilla CSS and HTML, it is impossible to add effects that trigger as the user scrolls down the page, as you can't track the current position of the page. This fixes that!
-
-First, add the ScrollReveal.js plugin to your page by including `<script src="https://unpkg.com/scrollreveal"></script>` in the head of index.html.
-
-Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in main.js. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
-
-First...
-=======
 We also want to add in a fancy typing effect to the title words -- you can also attempt to add this to any text you want! You probably have seen this on a number of websites, and its all from a simple js library called typedJS. So first you want to install typed.js. So go to the command line and do ```npm install typed.js```. Then in your html file, add ```<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>``` at the end of your body (make sure its above ```main.js```). Now for the fun stuff!
 
 Go into your ```main.js``` file. The way these typed words are created is just a simple object that holds some properties about how you want to display the typed out words. We're going to keep it simple, but feel free to google more properties and try to add them in. So we want to create a typed object for our ```quiz-title``` div, and this should be the first thing we do in the first ```getJSON```. We instantiate the typed object like a normal ```var```, and it takes a class or id as the first parameter, and a list of properties as the second parameter. This is the set up: 
@@ -226,6 +211,58 @@ var typed = new Typed('#quiz-title', {
   });
 ```
 Put this in your code and refresh the page! very funky. 
+
+## Part 3: Add Effects using ScrollReveal.js
+
+In vanilla CSS and HTML, it is impossible to add effects that trigger as the user scrolls down the page, as you can't track the current position of the page. This fixes that!
+
+First, add the ScrollReveal.js plugin to your page by including `<script src="https://unpkg.com/scrollreveal"></script>` in the head of index.html.
+
+Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in main.js. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
+
+First, lets make that submit button a bit more exciting. Use the function `ScrollReveal().reveal('#submit-container');` to make the button fade in as soon as a user scrolls to it. Reload the page and see if this works.
+
+`ScrollReveal()` lets the script know you are using ScrollReveal.js, and the `reveal()` method is telling the page what to do when it gets to that item. There are three other methods ScrollReveal.js includes - `clean`, `destroy`, and `sync` - but you usually won't need these so we won't worry about them. `#submit-container` is the ID for the submit button, but you can also specify elements using types and classes.
+
+The button should fade in, but you might have missed it, as it happens as soon as you get to the bottom of the quiz. Lets give the user a moment for their eyes to adjust. Replace the original funciton with:
+
+```javascript
+ScrollReveal().reveal('#submit-container', {delay:300});
+```
+
+Looking good! But we can do more. Lets make those questions more interesting. Add in:
+```javascript
+ScrollReveal().reveal('.question', {delay: 100});
+```
+
+Now each question will fade in as you get to it. But when you scroll back up, they are all still there. No fun! Add `reset: true` after `delay: 100`. Now the questions will fade in *every* time you scroll through them.
+
+Fading in is cool and all, but we can do more. Lets make those answers more interesting. Each answer is a `<label>` type so we can call on them by using `ScrollReveal().reveal('label')`. By setting an `interval` we can make each answer appear individually. Put this all together and we get:
+
+```javascript
+ScrollReveal().reveal('label', delay: 100, interval: 100);
+```
+
+Now lets add some movement. ScrollReveal makes this super easy to animate. Set an origin to determine where the element will start, and set a distance for the element to move. Your method should now look something like this:
+
+```javascript
+ScrollReveal().reveal('label', {delay: 100, interval: 100, origin: 'right', distance: '60px'};
+```
+
+This will work just fine, but with the magic of javascript we can clean this up just a bit. First, define a `let` called `labelReveal`. Move everything inbetween the curly braces in the function to the `let` you just defined. Now replace the curly-brace section with `labelReveal`. Your code should now look like:
+
+```javascript
+let labelReveal = {
+    delay: 100,
+    interval: 100,
+    origin: 'right',
+    distance: '60px'
+  };
+
+ScrollReveal().reveal('label', labelReveal);
+```
+
+And here are your effects! These are the basics for scroll reveal. There are lots of other options for animations and configurations you can find [here](https://scrollrevealjs.org/api/constructor.html).
 
 ## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
