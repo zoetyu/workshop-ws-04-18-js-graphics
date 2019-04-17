@@ -185,6 +185,16 @@ $(this).velocity({
 }, 600, "easeOutBounce");
 ```
 
+## Part 3: Add Effects using ScrollReveal.js
+
+In vanilla CSS and HTML, it is impossible to add effects that trigger as the user scrolls down the page, as you can't track the current position of the page. This fixes that!
+
+First, add the ScrollReveal.js plugin to your page by including `<script src="https://unpkg.com/scrollreveal"></script>` in the head of index.html.
+
+Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in main.js. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
+
+First...
+
 ## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
 * We are going to use a CanvasJS chart to create this breakdown of your results for you. 
