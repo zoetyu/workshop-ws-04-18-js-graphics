@@ -34,15 +34,52 @@ $.getJSON("data.json", function(data) {
     $(this).siblings().addClass('unselected');
     $(this).siblings().removeClass('selected');
     $(this).removeClass('unselected');
+    //tutorial
+    $(this).velocity({
+      scale: 1.2
+    }, 200);
+    $(this).siblings().velocity({
+      scale: 0.8
+    }, 200);
+  });
+  //tutorial
+  $('.choice').click(function() {
+    $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
+    $(this).velocity({  rotateZ: "-=120" }, { duration: 100});
+    $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
   });
 });
 
 var winner = ""; // need this to be global 
 
+//tutorial
+$("#quiz-title").velocity({ 
+  scale: 1.5
+}, 500);
+$("#quiz-title").velocity({ 
+  scale: 1.0
+}, 500);
+
 $('#submit').on('click', function(e) {
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
       return $(radio).val();
     }).toArray();
+
+    //tutorial
+    $(this).velocity({
+      translateY: "-1.5rem",
+      rotateZ: "-10deg"
+    }, 100, "easeOut").velocity({
+      rotateZ: "8deg",
+    }, 150).velocity({
+      translateY: "0",
+      rotateZ: "0"
+    }, 600, "easeOutBounce");
+    
+    $("+ .shadow", this).velocity({
+      scale: "1.3",
+      opacity: "1"
+    }, 150).velocity("reverse", 600, "easeOutBounce");
     
     // used this for help on writing the function below to find the most freq. word 
     //appendto.com/2016/10/finding-the-most-frequent-string-in-a-javascript-array/
