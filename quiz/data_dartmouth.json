@@ -39,7 +39,7 @@
                 },
                 {
                     "img": "img/baby3.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 },
                 {
                     "img": "img/baby4.jpg",
@@ -65,7 +65,7 @@
                 {
                     "caption": "a bloody mary",
                     "img": "img/bloodymary.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 },
                 {
                     "caption": "waffles",
@@ -93,7 +93,7 @@
                 },
                 {
                     "img": "img/dart6.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 }
             ]
         },
@@ -120,7 +120,7 @@
                 {
                     "caption": "Fall",
                     "img": "img/fall.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 }
             ]
         },
@@ -147,7 +147,7 @@
                 {
                     "caption": "Paris Hilton",
                     "img": "img/parishilton.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 }
             ]
         },
@@ -166,7 +166,7 @@
                 },
                 {
                     "caption": "&#34People are weird. When we find someone with weirdness that is compatible with ours, we team up and call it love.&#34",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 },
                 {
                     "caption": "&#34Don't cry because it's over; smile because it happened&#34",
@@ -197,7 +197,7 @@
                 {
                     "caption": "Midnight snowball fight",
                     "img": "img/snowball.jpg",
-                    "value": "Dartmouth Hall"
+                    "value": "DartHall"
                 }
             ]
         }
