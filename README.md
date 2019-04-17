@@ -125,6 +125,64 @@ document.addEventListener(clickHandler, function(e) {
 Play around with these to see how the different parts of the animation fit together! Modify your timeline to just add each of the individual elements you want to see and reload your page and see how the click effect changes. For example, if you just want to see the burst effect, change your timeline add line to: ```timeline.add(burst)```, or to see what just the burst and the circle would look like, use ```timeline.add(burst, circle)```!
 
 
+## Part 2: Add Velocity Animations
+
+Let's add some new simple animations to the main part of our quiz with velocity!
+
+### Selected Answer Effects
+
+Here we increase the size of our selected answer and decrease the size of the options we didn't select. We can use  ```scale``` to do this very easily. See how simple and intuitive the syntax is?
+
+Add this block of code inside of the click function for label.
+
+```javascript
+$(this).velocity({
+  scale: 1.2
+}, 200);
+$(this).siblings().velocity({
+  scale: 0.8
+}, 200);
+```
+
+Next, let's add a shake effect for when we select an answer. We can use ```rotateZ``` to make the div rotate to the right, then the left, and then back to neutral.
+
+Add this block of code just below the click function for label but still inside of the getJSON function.
+
+```javascript
+$('.choice').click(function() {
+  $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
+  $(this).velocity({  rotateZ: "-=120" }, { duration: 100});
+  $(this).velocity({  rotateZ: "+=60" }, { duration: 100});
+});
+```
+
+### More Animations!
+
+Let's make our title banner a little bit more exciting. When we first open the quiz, let's use scale again make it get larger and then return to normal size.
+
+```javascript
+$("#quiz-title").velocity({ 
+  scale: 1.5
+}, 500);
+$("#quiz-title").velocity({ 
+  scale: 1.0
+}, 500);
+```
+
+Now let's add a bounce animation to our results button, and this time throw in some easing. This just changes the way that the animation is carried out, like in the case of ```easeOutBounce``` this means that the button will bounce once it reaches the end point of the animation.
+
+```javascript
+$(this).velocity({
+  translateY: "-1.5rem",
+  rotateZ: "-10deg"
+}, 100, "easeOut").velocity({
+  rotateZ: "8deg",
+}, 150).velocity({
+  translateY: "0",
+  rotateZ: "0"
+}, 600, "easeOutBounce");
+```
+
 ## Last part: Adding a Results Chart :gem::gem::gem:
 * As of right now, the results modal tells you which character you are most like. But it doesn't tell you how much of each character you really are! Wouldn't it be cool to know what % of each character you are? Well we are going to put in a fun little chart to show you exactly that. yay. 
 * We are going to use a CanvasJS chart to create this breakdown of your results for you. 
@@ -216,3 +274,12 @@ https://codepen.io/sdras/pen/kkqNYK?editors=1111
 
 * Canvas.js chart
 https://canvasjs.com/javascript-charts/animated-chart/
+<<<<<<< HEAD
+
+* Bouncy Button
+https://codepen.io/bennettfeely/pen/DAbuf
+
+
+
+=======
+>>>>>>> 6887eacdb9366468d008dd0f12fba48ba42ae8bf
