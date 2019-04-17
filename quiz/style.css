@@ -18,6 +18,15 @@ body {
     justify-content: flex-end;
     text-align: right; 
     padding-right: 30px; 
+    color: #F9C507;
+    font-size: 3rem; 
+    /* https://css-tricks.com/adding-stroke-to-web-text/ */
+    text-shadow: 
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
 }
 .question {
     margin-left: 5vw;
@@ -167,7 +176,7 @@ input[type=radio]:hover + div > img {
 .result-content {
     background-color: #F9F9F9;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 20px; 
     width: 80%; /* Could be more or less, depending on screen size */
     transform:scaleY(.01) scaleX(0);
     animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
@@ -216,10 +225,9 @@ button:focus {
 }
 
 div.canvasjs-chart-container {
-    text-align: center !important;
-    position: relative !important;
-    height: 400px !important;
+   left: 25%;
+   top: 25%; 
 }
-canvas.canvasjs-chart-canvas {
-    position: relative !important; 
+canvas.canvasjs-chart-canvas, div.canvasjs-chart-tooltip {
+    /*position: relative !important; */
 }
