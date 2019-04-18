@@ -284,7 +284,7 @@ We're going to index into our array of frequencies for each answer in order to f
   }
 ```
 Now, we want to say that if the frequency of a certain key is > 0, return that frequency divided by the number of questions, multiplied by 100 to get a round percentage number. Otherwise just return 0. You can probs write the body of this yourself. Make sure to use ```parseInt``` on the values in frequencies. Also ```parseInt(...).toFixed(2)``` will be helpful to achieve a nice round percent number. 
-~try it yourself~ :dizzy: :collision: :dizzy: :collision: :dizzy:
+try it yourself :dizzy: :collision: :dizzy: :collision: :dizzy:
 
 This is what you should have: 
 ```javascript  
