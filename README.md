@@ -294,12 +294,12 @@ This is what you should have:
 3. Okay, now we want to actually create a graph.:chart_with_upwards_trend: We're going to put this all into a ``` loadGraph() ``` function. ``` loadGraph() ``` holds all the logic about your chart and is very customizable. Underneath your ```getPercentage``` method, add in 
 ```javascript 
   function loadGraph() {
-        var chart = new CanvasJS.Chart("graph", {
+    var chart = new CanvasJS.Chart("graph", {
 
-        })
+    })
   }
 ```
-The canvas chart module is pretty well-defined, so we're just going to use some of their presets to create our graph. They have properties like ```width```, ```height```, ```theme```, ```exportEnabled```(which just adds an option to print or share your graph), ```responsive```, and ```animationEnabled```. These are the settings we chose, but feel free to change them. 
+The canvas chart module is pretty well-defined, so we're just going to use some of their presets to create our graph. They have properties like ```width```, ```height```, ```theme```, ```exportEnabled```(which just adds an option to print or share your graph), ```responsive```, and ```animationEnabled```. These are the settings we chose, but feel free to change them. This goes inside the brackets next to "graph" in the chart variable. 
 ```javascript 
   width: 600,
   height: 400,
@@ -321,17 +321,17 @@ There's also a whole data property. We're going to create a simple pie chart wit
       indexLabelFontSize: 16,
       indexLabel: "{label}: {y}%",
       dataPoints: [
-        { y: getPercentage("alexis"), label: "Alexis" },
-        { y: getPercentage("david"), label: "David" },
-        { y: getPercentage("moira"), label: "Moira" },
-        { y: getPercentage("johnny"), label: "Johnny" },
+        { y: getPercentage("DartHall"), label: "Dartmouth Hall" },
+        { y: getPercentage("Baker"), label: "Baker" },
+        { y: getPercentage("Collis"), label: "Collis" },
+        { y: getPercentage("Foco"), label: "Foco" },
       ]
     }]
   }); 
 ```
 This is the end of our chart variable. Then call ```chart.render();``` and close out the ```loadGraph()``` function. That's it! You're welcome to play around with the different chart properties. 
 
-4. The second-to-last step is making sure the chart refreshes each time you take the quiz -- without needing to refresh the page. This is important so the frequencies don't start adding up and making percentages > 100%. For this, we wrote a little function called ```resetFreqs()``` where we just loop through each key in frequencies and set it to 0. We call this in the ```onclick``` of span. Where do we want to call it in the ```window.onclick```? Most likely when you check whether the event you are clicking off of is the results modal. We have faith you all can write this function on your own. 
+4. **EXTRA CREDIT** The second-to-last step is making sure the chart refreshes each time you take the quiz -- without needing to refresh the page. This is important so the frequencies don't start adding up and making percentages > 100%. For this, we wrote a little function called ```resetFreqs()``` where we just loop through each key in frequencies and set it to 0. We call this in the ```onclick``` of span. Where do we want to call it in the ```window.onclick```? Most likely when you check whether the event you are clicking off of is the results modal. We have faith you all can write this function on your own. 
 
 5. The final step is calling ```loadGraph()``` in the correct spot! We only want it to display when a user has full results, e.g. has answered all the questions. We want to set up a variable that checks whether a user has answered all the questions. So, in the second ```getJSON```, add in a ```var user_error = false```. Set this to true if the user hasn't answered all the questions. Finally, at the end of your ```getJSON```, you just want to put in a simple if statement to check user_error is false and load the graph if so. 
 

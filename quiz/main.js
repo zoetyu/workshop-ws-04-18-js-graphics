@@ -81,7 +81,6 @@ $('#submit').on('click', function (e) {
     num_questions = parseInt(data.number_of_questions);
     if (choices.length < data.number_of_questions) {
       current_outcome = $(`<p id="error">${data.error}</p>`);
-      user_error = true;
     } else {
       current_outcome = null;
     }
