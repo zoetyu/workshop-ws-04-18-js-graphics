@@ -350,7 +350,7 @@ That's it!! Hope you enjoy finding out your results in chart form :)
 * [ ] A scroll reveal effect
 * [ ] A results chart to finish your quiz
  
-Now try applying some of the techniques you've learned to your own quiz!
+**Extra Credit**: Now try applying some of the techniques you've learned to your own quiz!
 
 ## Summary / What you Learned
 
