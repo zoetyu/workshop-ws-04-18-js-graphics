@@ -231,11 +231,14 @@ ScrollReveal().reveal('#submit-container', {delay:300});
 ```
 
 Looking good! But we can do more. Lets make those questions more interesting. Add in:
+
 ```javascript
 ScrollReveal().reveal('.question', {delay: 100});
 ```
 
-Now each question will fade in as you get to it. But when you scroll back up, they are all still there. No fun! Add `reset: true` after `delay: 100`. Now the questions will fade in *every* time you scroll through them.
+Now each question will fade in as you get to it. But when you scroll back up, they are all still there. No fun! We can add more customization options by including more variable definitons in the curly braces, separated by commas. See a list of all the variables and their default values [here](https://scrollrevealjs.org/api/defaults.html). 
+
+Add `reset: true` within the brackets after `delay: 100`, separated by a comma. Now the questions will fade in *every* time you scroll through them.
 
 Fading in is cool and all, but we can do more. Lets make those answers more interesting. Each answer is a `<label>` type so we can call on them by using `ScrollReveal().reveal('label')`. By setting an `interval` we can make each answer appear individually. Put this all together and we get:
 
@@ -243,18 +246,19 @@ Fading in is cool and all, but we can do more. Lets make those answers more inte
 ScrollReveal().reveal('label', delay: 100, interval: 100);
 ```
 
-Now lets add some movement. ScrollReveal makes this super easy to animate. Set an origin to determine where the element will start, and set a distance for the element to move. Your method should now look something like this:
+Now lets add some movement. ScrollReveal makes this super easy to animate. Set an `origin` - this can be `'top'`, `'bottom'`, `'right'` or `'left'` -  to determine where the element will start, and set a `distance` for the element to move. *Distance can only be measured in px, em, or %*, no other css units. Your method should now look something like this:
 
 ```javascript
-ScrollReveal().reveal('label', {delay: 100, interval: 100, origin: 'right', distance: '60px'};
+ScrollReveal().reveal('label', {delay: 100, interval: 100, reset: true, origin: 'right', distance: '60px'};
 ```
 
-This will work just fine, but with the magic of javascript we can clean this up just a bit. First, define a `let` called `labelReveal`. Move everything inbetween the curly braces in the function to the `let` you just defined. Now replace the curly-brace section with `labelReveal`. Your code should now look like:
+This will work just fine, but with the magic of javascript we can clean this up just a bit. First, define a `let` called `labelReveal`. From the function, take the curly braces and everything inbetween them and move that to the `let` you just defined. Now replace the curly-brace section with `labelReveal`. Your code should now look like:
 
 ```javascript
 let labelReveal = {
     delay: 100,
     interval: 100,
+    reset: true,
     origin: 'right',
     distance: '60px'
   };
@@ -367,4 +371,5 @@ https://codepen.io/bennettfeely/pen/DAbuf
 * https://css-tricks.com/myth-busting-css-animations-vs-javascript/
 * https://www.chartjs.org/docs/latest/
 * https://www.w3schools.com/html/html5_canvas.asp
+* https://scrollrevealjs.org/
 
