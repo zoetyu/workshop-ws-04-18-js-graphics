@@ -142,7 +142,7 @@ npm install velocity -g
 
 ### Selected Answer Effects
 
-Here we increase the size of our selected answer and decrease the size of the options we didn't select. We can use  ```scale``` to do this very easily. See how simple and intuitive the syntax is?
+Now let's switch over to our ```main.js``` file. Here we increase the size of our selected answer and decrease the size of the options we didn't select. We can use  ```scale``` to do this very easily. See how simple and intuitive the syntax is?
 
 Add this block of code inside of the click function for label.
 
@@ -170,6 +170,8 @@ $('.choice').click(function() {
 ### More Animations!
 
 Let's make our title banner a little bit more exciting. When we first open the quiz, let's use scale again make it get larger and then return to normal size.
+
+Add this block of code anywhere in the body of our ```main.js``` file.
 
 ```javascript
 $("#quiz-title").velocity({ 
