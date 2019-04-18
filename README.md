@@ -20,14 +20,14 @@ As you are working, you can always view your quiz by running:
 
 ### Load in Mo.js
 
-First we need to load in the mo.js library! In you index.html file, add the following to the *body* section.
+First we need to load in the mo.js library! In your index.html file, add the following to the *body* section.
 
 ```html
 <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
 ```
 
 ### Burst shape
-The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. Here is the code we want to use for our burst:
+The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. From now on in this section, all your code should go in your main.js file in the quiz directory. Here is the code we want to use for our burst:
 
 ```javascript
 const burst = new mojs.Burst({ 
