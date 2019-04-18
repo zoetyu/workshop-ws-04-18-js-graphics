@@ -27,7 +27,7 @@ First we need to load in the mo.js library! In your index.html file, add the fol
 ```
 
 ### Burst shape
-The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. From now on in this section, all your code should go in your main.js file in the quiz directory. Here is the code we want to use for our burst:
+The click effect we want to achieve consists of several shapes. The first we want to create is a ```Burst``` object. The Burst is a special module in mojs that gives us the "bursting" quality of animation. From now on in this section, all your code should go in your ```main.js``` file in the quiz directory. Here is the code we want to use for our burst:
 
 ```javascript
 const burst = new mojs.Burst({ 
@@ -220,7 +220,7 @@ In vanilla CSS and HTML, it is impossible to add effects that trigger as the use
 
 First, add the ScrollReveal.js plugin to your page by including `<script src="https://unpkg.com/scrollreveal"></script>` in the head of index.html.
 
-Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in main.js. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
+Like we did when adding Velocity effects, we are going to include some extra JavaScript functions to the bottom of the `$.getJson` function in ```main.js```. As these effects will be acting on HTML elements that will only be added after the JSON file is parsed, we need to make sure the scripts we write will only be read after parsing.
 
 First, lets make that submit button a bit more exciting. Use the function `ScrollReveal().reveal('#submit-container');` to make the button fade in as soon as a user scrolls to it. Reload the page and see if this works.
 
@@ -342,6 +342,15 @@ This is the end of our chart variable. Then call ```chart.render();``` and close
 5. The final step is calling ```loadGraph()``` in the correct spot! We only want it to display when a user has full results, e.g. has answered all the questions. We want to set up a variable that checks whether a user has answered all the questions. So, in the second ```getJSON```, add in a ```var user_error = false```. Set this to true if the user hasn't answered all the questions. Finally, at the end of your ```getJSON```, you just want to put in a simple if statement to check user_error is false and load the graph if so. 
 
 That's it!! Hope you enjoy finding out your results in chart form :) 
+
+## What you should have
+
+* [ ] A burst click effect
+* [ ] Some basic velocity animations
+* [ ] A scroll reveal effect
+* [ ] A results chart to finish your quiz
+ 
+Now try applying some of the techniques you've learned to your own quiz!
 
 ## Summary / What you Learned
 
